@@ -65,7 +65,7 @@ public class ResPurchase {
 
 		// 对于桌子进行遍历，该桌子能够容纳的人数，以及最大金额
 		int sum = 0;
-		// 给被过滤掉的那一批客人，予以标记
+		// 给被过滤掉的那一批客人，予以标记	
 		for (int i = 0; i < list.size(); i++) {
 			int max = 0;
 			for (int j = 0; j < xiaofei.size(); j++) {
