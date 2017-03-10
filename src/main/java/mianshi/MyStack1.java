@@ -2,9 +2,16 @@ package mianshi;
 
 import java.util.Stack;
 
+/**
+ * 
+ *上午12:47:10
+ * @author yuzhao.yang
+ *
+ */
 public class MyStack1 {
 
 	// 构建两个栈
+	//
 	// 用于存储栈内的数据
 	private Stack<Integer> stackData;
 	// 用于存储最小值
