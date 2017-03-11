@@ -4,9 +4,11 @@
 package mianshi;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -17,10 +19,18 @@ import java.util.Scanner;
  */
 public class ResPurchase {
 	public static void main(String[] args) {
-
+		ResPurchase chase = new ResPurchase();
+		// chase.sort();
+		// chase.customSort();
+		chase.AnotherCount();
 	}
 
-	public void getInput() {
+	public void AnotherCount() {
+
+		List<Integer> list = new ArrayList<Integer>();
+		// 用于存储客人的消费能力
+		List<Customer> xiaofei = new ArrayList<Customer>();
+
 		System.out.println("请输入两个整数:n & m");
 		Scanner sc = new Scanner(System.in);
 		sc.useDelimiter("\n");
@@ -29,7 +39,6 @@ public class ResPurchase {
 		String m = line.split(" ")[1];
 		System.out.println("桌子总数:" + n + ";客人批数:" + m);
 
-		List<Integer> list = new ArrayList<Integer>();
 		System.out.println("请输入桌子容量");
 		Scanner sc1 = new Scanner(System.in);
 		sc1.useDelimiter("\n");
@@ -39,69 +48,132 @@ public class ResPurchase {
 			list.add(Integer.parseInt(ele));
 		}
 
-		// 获取其中最大的值
-		int result = 0;
-		for (Integer element : list) {
-			if (element > result) {
-				result = element;
-			}
-		}
-
-		// 用于存储客人的消费能力
-		List<String> xiaofei = new ArrayList<String>();
-
 		System.out.println("请输入" + m + "行数:");
 		for (int i = 0; i < Integer.parseInt(m); i++) {
+			System.out.println("请输入" + i + "行数:");
 			Scanner sc3 = new Scanner(System.in);
-			String line3 = sc.next();
-			xiaofei.add(i + "#" + line3);
 			sc3.useDelimiter("\n");
+			String line3 = sc.next();
+			String[] innnerArray = line3.split(" ");
+			int num = Integer.parseInt(innnerArray[0]);
+			int jine = Integer.parseInt(innnerArray[1]);
+
+			Customer customer = new Customer(i, num, jine);
+			xiaofei.add(customer);
 		}
 
-		// 接下来，输出桌子容量，并且输入客人以及消费能力，用于存储
-		// 客人以及其消费能力的对应，用一个hashMap进行存储
-		// 接下来需要计算，如何接收客人，能够达到最大的消费能力，但是每次消费都只是一次消费。
-		// 根据条件去过滤
+		// 桌子按照顺序排序
+		// 消费金额按照倒序排序
+		// 争取让每张桌子都能够拿到最大的金额
+		// 当前桌子的表达形式是一个ArrayList，需要对其进行排序，确定其大小，放入一个新的array里面
+		// 对桌子的大小进行顺序排序
+		Collections.sort(list);
 
-		// 对于桌子进行遍历，该桌子能够容纳的人数，以及最大金额
+		Collections.sort(xiaofei);
+		Collections.reverse(xiaofei);
+
+		// 已经计算过的客人
+		List<Customer> counted = new ArrayList<Customer>();
+
+		// 顺序的对桌子进行排序
 		int sum = 0;
-		// 给被过滤掉的那一批客人，予以标记	
-		for (int i = 0; i < list.size(); i++) {
-			int max = 0;
-			for (int j = 0; j < xiaofei.size(); j++) {
-				// 每批的人数
 
-				int renshu = Integer.parseInt((xiaofei.get(j).split("#")[1])
-						.split(" ")[0]);
-				int jine = Integer.parseInt((xiaofei.get(j).split("#")[1])
-						.split(" ")[1]);
-
-				// 需要确定其不会重复计算
-				// 一遍遍过滤，最终定下之后，刷掉这一组，否则其他桌还坐着这桌的人，就不合理了。
-				// 小于等于当前桌子的尺寸
-				if (renshu <= list.get(i)) {
-					// 需要刷出当前的最大值，并且给这组一个标记
-					max = Math.max(max, jine);
+		for (Integer table : list) {
+			// 逆序的去遍历金额
+			for (Customer customer : xiaofei) {
+				if (table >= customer.num && !counted.contains(customer)) {
+					counted.add(customer);
+					sum += customer.jine;
+					System.out.println(sum);
+					break;
 				}
 			}
 		}
+		System.out.println("最大消费金额:" + sum);
+
 	}
 
-	/**
-	 * 
-	 * @desc
-	 * @param
-	 * @return
-	 * @author yuzhao.yang
-	 * @date 2017年3月10日
-	 */
-	public int max() {
-		// 遍历最大值也可以解决问题的
-		//明白了前人的思想
-		//两个排序：一个按照桌子的大小进行排序
-		//一个按照消费金额的多少进行排序。
-		
+	public void sort() {
+		List<Integer> list = new ArrayList<Integer>();
+		for (int i = 0; i < 10; i++) {
+			list.add(new Random().nextInt(10));
+		}
+		Collections.sort(list);
+		for (Integer ele : list) {
+			System.out.println(ele);
+		}
+	}
 
-		return 0;
+	class Customer implements Comparable<Customer> {
+		private Integer pici;
+		private Integer num;
+		private Integer jine;
+
+		public Integer getJine() {
+			return jine;
+		}
+
+		public void setJine(Integer jine) {
+			this.jine = jine;
+		}
+
+		public Customer(Integer pici, Integer num, Integer jine) {
+			this.pici = pici;
+			this.num = num;
+			this.jine = jine;
+		}
+
+		public Integer getPici() {
+			return pici;
+		}
+
+		public void setPici(Integer pici) {
+			this.pici = pici;
+		}
+
+		public Integer getNum() {
+			return num;
+		}
+
+		public void setNum(Integer num) {
+			this.num = num;
+		}
+
+		/**
+		 * @desc
+		 * @param
+		 * @return
+		 * @author yuzhao.yang
+		 * @date 2017年3月11日
+		 */
+		public int compareTo(Customer o) {
+			// TODO Auto-generated method stub
+			if (this.jine < o.jine) {
+				return -1;
+			} else if (this.jine > o.jine) {
+				return 1;
+			} else {
+				return 0;
+			}
+		}
+
+		@Override
+		public String toString() {
+			return "批次:" + this.pici + ";人数:" + this.num + ";消费金额:" + this.jine;
+		}
+	}
+
+	public void customSort() {
+		List<Customer> list = new ArrayList<Customer>();
+		for (int i = 0; i < 10; i++) {
+			Customer customer = new Customer(i, new Random().nextInt(10),
+					new Random().nextInt(10));
+			list.add(customer);
+		}
+		Collections.sort(list);
+		Collections.reverse(list);
+		for (Customer cus : list) {
+			System.out.println(cus.toString());
+		}
 	}
 }
