@@ -28,7 +28,8 @@ public class Njiecheng {
 		// tiaojianyunsuan();
 		// getSum();
 		// wanshu();
-		bubbleSort();
+		// bubbleSort();
+		countZero();
 	}
 
 	/**
@@ -444,5 +445,16 @@ public class Njiecheng {
 		}
 
 		return result;
+	}
+
+	public static void countZero() {
+		while (true) {
+			System.out.println("请输入:");
+			Scanner sc = new Scanner(System.in);
+			String line = sc.next();
+			int n = Integer.valueOf(line);
+			System.out.println(jiecheng(n));
+			System.out.println(n / 5);
+		}
 	}
 }
