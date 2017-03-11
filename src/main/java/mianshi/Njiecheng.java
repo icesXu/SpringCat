@@ -40,7 +40,7 @@ public class Njiecheng {
 	 * @author yuzhao.yang
 	 * @date 2017年3月6日
 	 */
-	public static int jiecheng(int n) {
+	public static long jiecheng(long n) {
 
 		if (n == 1) {
 			return 1;
@@ -452,7 +452,7 @@ public class Njiecheng {
 			System.out.println("请输入:");
 			Scanner sc = new Scanner(System.in);
 			String line = sc.next();
-			int n = Integer.valueOf(line);
+			long n = Long.valueOf(line);
 			System.out.println(jiecheng(n));
 			System.out.println(n / 5);
 		}
