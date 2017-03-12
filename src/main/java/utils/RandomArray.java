@@ -16,11 +16,18 @@ public class RandomArray {
 
 	}
 
-	public static Integer[] randArr(int n) {
+	public static Integer[] InitArr(int n) {
 		Integer[] array = new Integer[n];
 		for (int i = 0; i < n; i++) {
 			array[i] = new Random().nextInt(n + 40);
 		}
 		return array;
+	}
+
+	public static void outArr(Integer[] array) {
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
 	}
 }

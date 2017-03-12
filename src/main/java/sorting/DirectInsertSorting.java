@@ -18,7 +18,7 @@ public class DirectInsertSorting {
 	}
 
 	public static void insertSort() {
-		Integer[] array = RandomArray.randArr(10);
+		Integer[] array = RandomArray.InitArr(10);
 		RandomArray.outArr(array);
 		for (int i = 1; i < array.length; i++) {
 			// 每一个元素都会向后移动
