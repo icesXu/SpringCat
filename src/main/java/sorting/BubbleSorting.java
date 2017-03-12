@@ -28,7 +28,7 @@ public class BubbleSorting {
 	 * @date 2017年3月12日
 	 */
 	public static void toAfterBubbleSort(int n) {
-		Integer[] array = RandomArray.randArr(n);
+		Integer[] array = RandomArray.InitArr(n);
 		// 外循环
 		for (int i = array.length; i > 0; i--) {
 			for (int j = 1; j < i; j++) {
@@ -44,7 +44,7 @@ public class BubbleSorting {
 	}
 
 	public static void toBeforeBubbleSort(int n) {
-		Integer[] array = RandomArray.randArr(n);
+		Integer[] array = RandomArray.InitArr(n);
 		// 把后面最小的往前冒
 		for (int i = 0; i < array.length; i++) {
 			for (int j = array.length - 1; j > i; j--) {
