@@ -64,6 +64,10 @@ public class NetEaseHechang {
 		long max = Long.MIN_VALUE;
 
 		// 接下来进行计算
+		//从最大值开始计算，计算彼此间隔小于n的值，计算到第k - 1个的时候，如果依旧是负数的话
+		//下面必须找一个负数，考虑找到一个负数，和回溯
+		
+		
 
 	}
 
