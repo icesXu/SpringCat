@@ -16,8 +16,6 @@ import utils.InputUtils;
  */
 public class CircleWords {
 	public static void main(String[] args) {
-		// String text = "longwang";
-		// System.out.println(change(text, 2));
 		count();
 	}
 
