@@ -57,11 +57,15 @@ public class ConMaxSum {
 
 		// 递归求出左半部分和右半部分的最大子序列和
 		int center = (left + right) / 2;
+
+		// 递归方式求取左侧最大值
 		int maxLeftSum = maxSubSumRec(array, left, center);
+		// 递归方式，求取右侧最大值
 		int maxRightSum = maxSubSumRec(array, center + 1, right);
 
 		// 求出左半部分中包含最右边元素的子序列的最大和
 		int maxLeftBorderSum = 0, leftBorderSum = 0;
+		
 		for (int i = center; i >= left; i--) {
 			leftBorderSum += array[i];
 			if (leftBorderSum > maxLeftBorderSum) {
