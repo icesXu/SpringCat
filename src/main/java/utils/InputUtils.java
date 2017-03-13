@@ -22,4 +22,14 @@ public class InputUtils {
 		String line = sc.next();
 		return line;
 	}
+
+	public static Integer getInt(String tishi) {
+		String line = getInput(tishi);
+		return Integer.parseInt(line);
+	}
+
+	public static Long getLong(String tishi) {
+		String line = getInput(tishi);
+		return Long.parseLong(line);
+	}
 }
