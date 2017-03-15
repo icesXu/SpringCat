@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.alibaba.fastjson.JSON;
+
 import utils.RandomArray;
 
 /**
@@ -92,26 +94,17 @@ public class MaxIncreString extends BaseSpider {
 
 		// 按照数字大小进行排序
 		Collections.sort(list);
+		System.out.println();
+		
+		for(Number number : list){
+			System.out.print(number.getCount() + ";" + number.getPosition() + " ");
+		}
+		
 		// 现在问题就转化为在list中取其一部分，要求其位置是递增的就可以
 		int max = 0;
 		// 起始点
-		for (int i = 0; i < list.size(); i++) {
-			// 长度
-			for (int j = list.size() - 1; j > i; j--) {
-				List<Number> subList = list.subList(i, j + 1);
-				// 看该subList是否是递增的，如果不是，直接否定
-				// 计算出其中能够排成一排的数目
-				// 计算出其中有序的数量最大是多少
-				int index = 1;
-				int begin = 0;
-				while ((begin + index) < subList.size()
-						&& subList.get(begin + index).getPosition() > subList
-								.get(begin + index - 1).getPosition()) {
-					index++;
-				}
-				max = Math.max(index, max);
-			}
-		}
+		//最主要的在于，可以非连续，简单来说，就是按照这个顺序，截取里面出现最多的坐标的字符串
+		//已经满足了递增的顺序
 		System.out.println("最大长度:" + max);
 	}
 
