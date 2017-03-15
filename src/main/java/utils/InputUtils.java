@@ -19,6 +19,7 @@ public class InputUtils {
 	public static String getInput(String tishi) {
 		System.out.println(tishi);
 		Scanner sc = new Scanner(System.in);
+		sc.useDelimiter("\n");
 		String line = sc.next();
 		return line;
 	}

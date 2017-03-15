@@ -5,7 +5,6 @@ package mianshi;
 
 import java.util.Scanner;
 
-import org.apache.commons.io.*;
 import org.apache.commons.lang.StringUtils;
 
 /**
