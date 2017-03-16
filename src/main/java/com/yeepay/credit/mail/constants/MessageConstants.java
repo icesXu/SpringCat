@@ -1,4 +1,4 @@
-package com.yeepay.credit.mail.contant;
+package com.yeepay.credit.mail.constants;
 
 public class MessageConstants {
 
