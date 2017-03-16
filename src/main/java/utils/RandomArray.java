@@ -24,10 +24,17 @@ public class RandomArray {
 		return array;
 	}
 
+	/**
+	 * @desc
+	 * @param
+	 * @return
+	 * @author yuzhao.yang
+	 * @date 2017年3月16日
+	 */
 	public static void outArr(Integer[] array) {
+		// TODO Auto-generated method stub
 		for (int i = 0; i < array.length; i++) {
 			System.out.print(array[i] + " ");
 		}
-		System.out.println();
 	}
 }
