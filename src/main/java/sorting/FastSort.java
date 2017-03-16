@@ -58,9 +58,13 @@ public class FastSort {
 	}
 
 	public static void myQuickSort(int[] array, int start, int end) {
+		// 部署最低点
 		int low = start;
+		// 部署最高点
 		int high = end;
+		// 拿到最低点的值
 		int key = array[low];
+		// 满足条件的时候，从右向左先找比当前元素小的
 		while (low < high) {
 			// 快速排序
 			// 先从右向左排序
