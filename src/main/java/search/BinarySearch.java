@@ -24,7 +24,6 @@ public class BinarySearch {
 
 		// 构建出一个数组
 		Integer[] array = RandomArray.InitArr(20);
-		RandomArray.outArr(array);
 		// 对数组进行排序
 		for (int i = array.length; i > 0; i--) {
 			for (int j = 1; j < i; j++) {
