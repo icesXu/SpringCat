@@ -1,0 +1,91 @@
+auth:
+  worker : Geeker4ZolZ
+
+#######################################
+#mysql的默认连接配置
+
+default:
+  type: mysql
+  port: 3306
+  initialSize: 1
+  maxActive: 20
+  maxWait: 10000
+  filters:
+    - stat
+  auth: worker
+
+#######################################
+
+server:
+  #mysql服务
+  dbspider:
+    host: 172.17.103.83
+    #auth: jphappy
+
+
+
+#######################################
+#
+# [database]:
+#   [key]: [value]
+#   server: [server]
+#
+datasource:
+  spider:
+    server: dbspider
+  toc:
+    server: dbspider
+  credit:
+    server: dbspider
+  auth_verify:
+    server: dbspider
+  #company_lib:
+  #  server: dbbiz  
+  #card_data:
+  #  server: dbbiz
+  #tiny_url:
+  #  server: dbcard
+
+  #letter:
+  #  server: dbletter
+
+  #infostats:
+  #  server: dbinfostats
+
+  #msg_letter:
+  #  server: dbinfostats
+
+#  mysql_ha:
+#    server: dbcard
+#    initialSize: 0
+#    maxActive: 1
+#    auth : mysql_ha
+#    validationQuery: "select status from server_status order by modified_at desc, id desc limit 1;"
+
+#######################################
+# [database]:
+#   [table]:
+#     partitions: [number]
+#     colunm: [column]
+#
+partitions:
+  spider:
+    task_basic:
+      partitions: 100
+      column: id
+  #  card_user:
+  #    partitions: 100
+  #    column: card_id  
+  #  card_record:
+  #    partitions: 100
+  #    column: card_id
+  
+  #card_data:
+  #  vuser_vcard:
+  #    partitions : 100
+  #    column : vuid
+  #letter:
+  #  letter:
+  #    partitions: 100
+  #    column: receiver
+
