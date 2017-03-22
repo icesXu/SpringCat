@@ -1,4 +1,4 @@
-package RocketMqTest;
+package rocketmq;
 
 import com.alibaba.rocketmq.client.producer.DefaultMQProducer;
 import com.alibaba.rocketmq.client.producer.SendResult;

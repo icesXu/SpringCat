@@ -1,4 +1,4 @@
-package RocketMqTest;
+package rocketmq;
 
 import java.util.List;
 

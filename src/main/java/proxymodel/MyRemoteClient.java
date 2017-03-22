@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ProxyModel;
+package proxymodel;
 
 import java.rmi.Naming;
 

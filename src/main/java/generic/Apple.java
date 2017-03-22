@@ -12,6 +12,10 @@ package generic;
 public class Apple<T> {
 	private T info;
 
+	public Apple(T info) {
+		this.info = info;
+	}
+
 	public T getInfo() {
 		return info;
 	}
@@ -21,8 +25,7 @@ public class Apple<T> {
 	}
 
 	public static void main(String[] args) {
-		Apple<String> apple = new Apple<>();
-		apple.setInfo("longwang");
+		Apple<String> apple = new Apple<>("longwang");
 		System.out.println(apple.getInfo());
 	}
 

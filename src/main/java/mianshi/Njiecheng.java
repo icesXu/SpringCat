@@ -448,13 +448,7 @@ public class Njiecheng {
 	}
 
 	public static void countZero() {
-		while (true) {
-			System.out.println("请输入:");
-			Scanner sc = new Scanner(System.in);
-			String line = sc.next();
-			long n = Long.valueOf(line);
-			System.out.println(jiecheng(n));
-			System.out.println(n / 5);
-		}
+		int n = 2 * 5  * 10 * 2 * 15 * 20 * 4 * 25;
+		System.out.println(n);
 	}
 }
