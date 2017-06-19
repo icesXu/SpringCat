@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/admin/addBlog.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/admin/addUser.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/pages/admin/blogDetail.jsp=UTF-8
+encoding/springdemo.sql=UTF-8
