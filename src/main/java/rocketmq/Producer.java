@@ -9,7 +9,7 @@ public class Producer {
 	public static void main(String[] args) {
 		DefaultMQProducer producer = new DefaultMQProducer("Producer");
 		// nameserver服务,多个以;分开
-		producer.setNamesrvAddr("192.168.99.234:9876");
+		producer.setNamesrvAddr("192.168.79.1:9876");
 		System.out.println(producer.getClientIP());
 		try {
 			producer.start();
@@ -25,6 +25,7 @@ public class Producer {
 			msg = new Message("PushTopic", "push", "2",
 					"Just for test.".getBytes());
 			result = producer.send(msg);
+			System.out.println(result.toString());
 			System.out.println("id:" + result.getMsgId() + " result:"
 					+ result.getSendStatus());
 			;
