@@ -12,8 +12,7 @@ import org.apache.logging.log4j.Logger;
  * @time:2017年6月20日 下午1:53:13
  */
 public class Log4j2Test {
-	private static Logger logger = LogManager
-			.getLogger(LogManager.ROOT_LOGGER_NAME);
+	private static Logger logger = LogManager.getLogger("mylog");
 
 	public static void main(String[] args) {
 		process();
