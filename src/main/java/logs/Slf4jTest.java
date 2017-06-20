@@ -15,7 +15,7 @@ public class Slf4jTest {
 	private static Logger logger = LoggerFactory.getLogger("mylog");
 
 	public static void main(String[] args) {
-		logger.info("info slf4j");
+		logger.info("test:{}", "输出日志");
 	}
 
 }
