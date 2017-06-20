@@ -1,0 +1,9 @@
+2017-06-20 13:40:40  [ main:0 ] - [ DEBUG ]  This is a debug message
+2017-06-20 13:40:40  [ main:3 ] - [ INFO ]  This is a info message
+2017-06-20 13:40:40  [ main:3 ] - [ ERROR ]  This is a error message
+2017-06-20 13:44:49  [ main:0 ] - [ INFO ]  This is a info message
+2017-06-20 13:44:49  [ main:3 ] - [ ERROR ]  This is a error message
+2017-06-20 13:45:04  [ main:0 ] - [ ERROR ]  This is a error message
+2017-06-20 13:46:33  [ main:0 ] - [ DEBUG ]  This is a debug message
+2017-06-20 13:46:33  [ main:3 ] - [ INFO ]  This is a info message
+2017-06-20 13:46:33  [ main:3 ] - [ ERROR ]  This is a error message
